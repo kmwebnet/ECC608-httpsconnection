@@ -4,8 +4,8 @@ This issues "GET" request to https server and get a responce.
 
 # Requirements
 
-  Platformio with VS Code environment.
-  install "Espressif 32" platform definition on Platformio  
+  Platformio with VS Code environment.  
+  install "Espressif 32" platform definition on Platformio   
   Prior to compile this project, you must copy "cert_chain.c", which is made by privious step [ECC608-Provision](https://github.com/kmwebnet/ECC608-Provision) to "src" folder.  
 
   you need to modify the definition and variables in main.c as follows:  
@@ -28,9 +28,9 @@ status = atca_connect("" , "", &cfg);
 
 # Environment reference
   
-  Espressif ESP32-DevkitC
-  this project initialize both of I2C 0,1 port, and the device on I2C port 0 is absent.
-  pin assined as below:
+  Espressif ESP32-DevkitC. 
+  this project initialize both of I2C 0,1 port, and the device on I2C port 0 is absent.  
+  pin assined as below:  
 
 
       I2C 0 SDA GPIO_NUM_18
@@ -47,9 +47,7 @@ you need to change a serial port number which actually connected to ESP32 in pla
 
 # Run this project
 
-At first, you need to create self-signed CA chain by using python scripts step-by-step in "scripts" folder for test purpose.  
-the scripts will generate "cert_chain.c" and "provision.h" which is mandatory to compile main C source code.  
-You need to place 2 of them in "src" folder and,then execute "Upload" on Platformio. 
+in serial console, you can track TLS1.2 connections handled by MbedTLS.  
 
 # Result
 
